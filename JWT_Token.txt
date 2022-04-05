@@ -1,0 +1,24 @@
+JSON Web Token
+-> Access Token
+    -> Short Expiry 10/20 min
+-> Refresh Token
+    -> Longer expiry 10 days
+
+
+
+React (Browser)                                     RestfulAPI
+                    Post Login Request ->
+                    <- Access & Refresh
+                    HTTP request ->
+                    <- JWT Auth Needed
+                    Page Request + Access Token ->
+                    <- token expired
+                    refresh token ->
+                    <- new token
+                    Page Request + Access Token ->
+
+React (Browser)                                     RestfulAPI
+                    Refresh Token ->
+                    <- Unauthorized
+                    Post Login Request ->
+                    <- New Tokens
