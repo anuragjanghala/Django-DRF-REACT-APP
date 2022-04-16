@@ -24,7 +24,7 @@ class PostList(viewsets.ModelViewSet):
     
     def get_object(self, queryset=None, **Kwargs):
         item = self.kwargs.get('pk')
-        return get_object_or_404(Post, title=item)
+        return get_object_or_404(Post, slug=item)
     
     # define custom queryset
     def get_queryset(self):
